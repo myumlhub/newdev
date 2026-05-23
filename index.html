@@ -12,7 +12,25 @@
             --accent: #f25c05;
             --bg: #f3f4f6;
             --text: #374151;
+            --surface: #ffffff;
+            --surface-soft: #fdfdfd;
+            --surface-muted: #f9fafb;
+            --border: #e5e7eb;
+            --heading: #111827;
+            --muted: #6b7280;
+            --link: #f25c05;
             --sidebar-width: 300px;
+        }
+        body.dark-mode {
+            --bg: #0f172a;
+            --text: #d1d5db;
+            --surface: #111827;
+            --surface-soft: #0b1220;
+            --surface-muted: #1f2937;
+            --border: #334155;
+            --heading: #f8fafc;
+            --muted: #94a3b8;
+            --link: #fb923c;
         }
         body { 
             font-family: 'Inter', sans-serif; 
@@ -34,6 +52,122 @@
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+
+        /* Dark Mode */
+        .theme-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: var(--surface-muted);
+            color: var(--text);
+            cursor: pointer;
+            transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+        }
+        .theme-toggle:hover {
+            transform: translateY(-1px);
+            background: #fff7ed;
+            color: var(--accent);
+            border-color: #fdba74;
+        }
+        .theme-toggle i { width: 20px; height: 20px; }
+        body.dark-mode header {
+            background: rgba(15, 23, 42, 0.88);
+            border-bottom-color: rgba(51, 65, 85, 0.8);
+        }
+        body.dark-mode .main-container,
+        body.dark-mode .video-workspace {
+            background: var(--bg);
+        }
+        body.dark-mode .sidebar,
+        body.dark-mode .right-sidebar {
+            background: var(--surface-soft);
+            border-color: rgba(51, 65, 85, 0.85);
+        }
+        body.dark-mode .search-container input,
+        body.dark-mode .upload-input {
+            background: #020617;
+            color: #f8fafc;
+            border-color: var(--border);
+        }
+        body.dark-mode .search-container input:focus {
+            background: #0f172a;
+        }
+        body.dark-mode .header-right i,
+        body.dark-mode .main-nav .nav-btn,
+        body.dark-mode .menu-section .nav-btn,
+        body.dark-mode .modern-btn-secondary,
+        body.dark-mode .modern-card-content p,
+        body.dark-mode .modern-hero-subtitle,
+        body.dark-mode #display-desc,
+        body.dark-mode .asset-list li,
+        body.dark-mode .upload-list,
+        body.dark-mode .unlock-gate p,
+        body.dark-mode .uwm-library-note,
+        body.dark-mode #sidebar-placeholder-menu p,
+        body.dark-mode #sidebar-uwm-menu p {
+            color: var(--text) !important;
+        }
+        body.dark-mode #display-title,
+        body.dark-mode .modern-hero-title,
+        body.dark-mode .modern-section-header h2,
+        body.dark-mode .modern-card-content h3,
+        body.dark-mode .widget h3 {
+            color: var(--heading) !important;
+        }
+        body.dark-mode .modern-hero,
+        body.dark-mode .modern-card,
+        body.dark-mode .widget,
+        body.dark-mode .uwm-library-tab,
+        body.dark-mode .engagement-panel,
+        body.dark-mode .stat-pill,
+        body.dark-mode .upload-panel,
+        body.dark-mode .unlock-gate {
+            background: var(--surface) !important;
+            border-color: var(--border) !important;
+            color: var(--text) !important;
+        }
+        body.dark-mode .modern-card:hover {
+            border-color: #fb923c !important;
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.35), 0 10px 10px -5px rgba(0,0,0,0.25);
+        }
+        body.dark-mode .modern-card-icon,
+        body.dark-mode .main-nav .nav-btn.active,
+        body.dark-mode .menu-section .nav-btn.active,
+        body.dark-mode .main-nav .nav-btn:hover:not(.active),
+        body.dark-mode .menu-section .nav-btn:hover:not(.active),
+        body.dark-mode .video-file-button:hover {
+            background: rgba(242, 92, 5, 0.16) !important;
+            color: #fb923c !important;
+        }
+        body.dark-mode .menu-section,
+        body.dark-mode .modern-section-header h2 {
+            border-color: var(--border) !important;
+        }
+        body.dark-mode .sidebar h3,
+        body.dark-mode .asset-sidebar-block h3,
+        body.dark-mode .uwm-video-category h4 {
+            color: #fb923c !important;
+            border-color: rgba(251, 146, 60, 0.45) !important;
+        }
+        body.dark-mode a,
+        body.dark-mode .widget ul li a,
+        body.dark-mode .video-file-button {
+            color: var(--link) !important;
+        }
+        body.dark-mode iframe {
+            background: #ffffff;
+        }
+        body.dark-mode ::-webkit-scrollbar-thumb {
+            background: #475569;
+        }
+        body.dark-mode ::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
 
         /* App Layout */
         #portal-content { display: flex; flex-direction: column; height: 100vh; width: 100vw; }
@@ -309,6 +443,9 @@
                 <img src="UML%20LOGO.png" alt="UML Logo">
             </div>
             <div class="header-right">
+                <button class="theme-toggle" id="theme-toggle" type="button" onclick="toggleDarkMode()" aria-label="Switch to dark mode" title="Switch to dark mode">
+                    <i data-lucide="moon"></i>
+                </button>
                 <i data-lucide="bell"></i>
                 <i data-lucide="grid"></i>
                 <div class="user-profile">
@@ -760,6 +897,33 @@
             { title: "How to E-Sign", src: "videos/how-to-esign.mp4", category: "System Execution & Tech" }
         ];
         const engagementStorageKey = 'refiPortalEngagement';
+        const themeStorageKey = 'refiPortalTheme';
+
+        function applyTheme(theme) {
+            const isDark = theme === 'dark';
+            document.body.classList.toggle('dark-mode', isDark);
+
+            const themeToggle = document.getElementById('theme-toggle');
+            if (themeToggle) {
+                themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+                themeToggle.setAttribute('title', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+                themeToggle.innerHTML = `<i data-lucide="${isDark ? 'sun' : 'moon'}"></i>`;
+            }
+
+            if (window.lucide) { lucide.createIcons(); }
+        }
+
+        function initializeTheme() {
+            const savedTheme = localStorage.getItem(themeStorageKey);
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            applyTheme(savedTheme || (prefersDark ? 'dark' : 'light'));
+        }
+
+        function toggleDarkMode() {
+            const nextTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
+            localStorage.setItem(themeStorageKey, nextTheme);
+            applyTheme(nextTheme);
+        }
 
         function changeModule(key) {
             currentModuleKey = key;
@@ -1032,6 +1196,7 @@
         }
 
         window.addEventListener('DOMContentLoaded', () => {
+            initializeTheme();
             changeModule(currentModuleKey);
         });
     </script>
