@@ -842,6 +842,225 @@
             border-radius: var(--radius-sm);
         }
 
+        /* Loans In Process - Communication */
+        .lip-comm-section {
+            display: grid;
+            gap: 1.25rem;
+            width: 100%;
+        }
+
+        .lip-comm-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            background: linear-gradient(145deg, var(--surface) 0%, var(--surface-muted) 100%);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .lip-comm-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0 0 auto 0;
+            height: 5px;
+            background: var(--accent);
+        }
+
+        .lip-comm-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            padding: 0.42rem 0.8rem;
+            border-radius: 999px;
+            background: var(--accent-soft);
+            border: 1px solid var(--accent-border);
+            color: var(--link);
+            font-size: 0.78rem;
+            font-weight: 900;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .lip-comm-hero h3 {
+            margin: 0 0 0.65rem;
+            font-size: clamp(1.75rem, 3vw, 2.35rem);
+            line-height: 1.12;
+        }
+
+        .lip-comm-hero p {
+            margin: 0;
+            max-width: 780px;
+            color: var(--muted);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .lip-comm-tools {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .lip-comm-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 1.35rem;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+        }
+
+        .lip-comm-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent-border);
+        }
+
+        .lip-comm-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .lip-comm-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 14px;
+            background: var(--accent-soft);
+            border: 1px solid var(--accent-border);
+            color: var(--link);
+            font-size: 0.84rem;
+            font-weight: 900;
+        }
+
+        .lip-comm-label {
+            color: var(--muted);
+            font-size: 0.72rem;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .lip-comm-card h4 {
+            margin: 0 0 0.7rem;
+            color: var(--heading);
+            font-family: 'Inter', sans-serif;
+            font-size: 1.08rem;
+            font-weight: 900;
+        }
+
+        .lip-comm-card p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.94rem;
+            line-height: 1.62;
+        }
+
+        .lip-comm-list {
+            display: grid;
+            gap: 0.55rem;
+            margin: 1rem 0 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .lip-comm-list li {
+            position: relative;
+            padding-left: 1rem;
+            color: var(--text);
+            font-size: 0.9rem;
+            line-height: 1.45;
+        }
+
+        .lip-comm-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.62em;
+            width: 5px;
+            height: 5px;
+            border-radius: 999px;
+            background: var(--accent);
+        }
+
+        .lip-comm-wide {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+            gap: 1rem;
+            align-items: stretch;
+        }
+
+        .lip-comm-highlight {
+            border-left: 4px solid var(--accent);
+            background: var(--surface);
+        }
+
+        .lip-comm-note {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            padding: 1.25rem;
+            border-radius: var(--radius-lg);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .lip-comm-note-line {
+            display: block;
+            width: 5px;
+            align-self: stretch;
+            border-radius: 999px;
+            background: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .lip-comm-note strong {
+            display: block;
+            margin-bottom: 0.3rem;
+            color: var(--heading);
+            font-weight: 900;
+        }
+
+        .lip-comm-note p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.62;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 980px) {
+            .lip-comm-tools {
+                grid-template-columns: 1fr;
+            }
+
+            .lip-comm-wide {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .lip-comm-hero {
+                padding: 1.35rem;
+            }
+
+            .lip-comm-card {
+                padding: 1.1rem;
+            }
+
+            .lip-comm-note {
+                padding: 1.1rem;
+            }
+        }
+
+
         /* Tablet */
         @media (max-width: 1260px) {
             :root {
@@ -2297,8 +2516,93 @@
                 title: "Communication",
                 video: "",
                 hideVideo: true,
-                desc: "Communication strategies and best practices while loans are in process.",
-                assets: "<ul class='asset-list'><li>📌 Under construction: Communication coming soon.</li></ul>"
+                desc: "A simple guide to where loan updates happen, who communicates there, and how borrower contact should be handled.",
+                mainContent: `
+                    <section class="lip-comm-section" aria-label="Loans In Process Communication">
+                        <div class="lip-comm-hero">
+                            <span class="lip-comm-eyebrow">Loans In Process</span>
+                            <h3>Communication</h3>
+                            <p>Use this guide to understand where loan updates are shared, who is involved, and how communication should be documented while a file moves toward closing.</p>
+                        </div>
+
+                        <div class="lip-comm-tools">
+                            <article class="lip-comm-card">
+                                <div class="lip-comm-card-top">
+                                    <span class="lip-comm-number">01</span>
+                                    <span class="lip-comm-label">Team Updates</span>
+                                </div>
+                                <h4>Chatter</h4>
+                                <p>Chatter is where everyone tied to the loan works together to collect items, clear conditions, and keep the file moving toward closing.</p>
+                                <ul class="lip-comm-list">
+                                    <li>Submissions Specialist</li>
+                                    <li>Processor</li>
+                                    <li>Ordering Team</li>
+                                    <li>Originating Loan Officer</li>
+                                    <li>Team Lead</li>
+                                    <li>Lock Desk</li>
+                                    <li>Appraisal Coordinator</li>
+                                    <li>Solutions Consultant</li>
+                                </ul>
+                            </article>
+
+                            <article class="lip-comm-card">
+                                <div class="lip-comm-card-top">
+                                    <span class="lip-comm-number">02</span>
+                                    <span class="lip-comm-label">File History</span>
+                                </div>
+                                <h4>Enhanced Notes</h4>
+                                <p>Enhanced Notes document important updates in Salesforce after tasks, borrower calls, appraisal updates, or file movement.</p>
+                                <ul class="lip-comm-list">
+                                    <li>Leave clear notes after borrower conversations.</li>
+                                    <li>Document important loan details and next steps.</li>
+                                    <li>Use detailed notes to help prevent retention escalations.</li>
+                                </ul>
+                            </article>
+
+                            <article class="lip-comm-card">
+                                <div class="lip-comm-card-top">
+                                    <span class="lip-comm-number">03</span>
+                                    <span class="lip-comm-label">Borrower Contact</span>
+                                </div>
+                                <h4>DialPad</h4>
+                                <p>DialPad is the company phone system used for internal communication and borrower calls or text messages.</p>
+                                <ul class="lip-comm-list">
+                                    <li>DialPad is the primary borrower communication tool.</li>
+                                    <li>Calls and texts are recorded for training, clarity, and protection.</li>
+                                    <li>Loans not yet in process should be contacted every 24 hours for up to five total days.</li>
+                                </ul>
+                            </article>
+
+                            <article class="lip-comm-card lip-comm-wide lip-comm-highlight">
+                                <div>
+                                    <div class="lip-comm-card-top">
+                                        <span class="lip-comm-number">04</span>
+                                        <span class="lip-comm-label">Best Practice</span>
+                                    </div>
+                                    <h4>Watch for Your Name</h4>
+                                    <p>Chatter is active throughout the loan process. If you are tagged, respond quickly so the file does not stall.</p>
+                                </div>
+                                <div>
+                                    <div class="lip-comm-card-top">
+                                        <span class="lip-comm-number">05</span>
+                                        <span class="lip-comm-label">Documentation</span>
+                                    </div>
+                                    <h4>Notes Protect the File</h4>
+                                    <p>Good notes create a clear record of what happened, what was discussed, and what needs to happen next.</p>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="lip-comm-note">
+                            <span class="lip-comm-note-line" aria-hidden="true"></span>
+                            <div>
+                                <strong>Quick reminder</strong>
+                                <p>Use Chatter for team collaboration, Enhanced Notes for file documentation, and DialPad as the primary borrower communication tool.</p>
+                            </div>
+                        </div>
+                    </section>
+                `,
+                assets: ""
             },
             lip_closing: {
                 title: "Closing",
