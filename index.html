@@ -1683,11 +1683,17 @@
         }
 
 
-        /* Search bar size reduction: two-thirds width */
+
+        /* Search bar size reduction: half of current width */
         @media (min-width: 1224px) {
             .search-container {
-                width: 280px !important;
-                max-width: 280px !important;
+                width: 140px !important;
+                max-width: 140px !important;
+            }
+
+            .search-container input {
+                font-size: 0.82rem !important;
+                padding-right: 0.75rem !important;
             }
         }
 
