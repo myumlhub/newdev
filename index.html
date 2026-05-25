@@ -2084,6 +2084,233 @@
         }
 
 
+
+        /* Loans In Process - Closing */
+        .lip-close-section {
+            display: grid;
+            gap: 1.25rem;
+        }
+
+        .lip-close-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            background: linear-gradient(145deg, var(--surface) 0%, var(--surface-muted) 100%);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .lip-close-hero::before {
+            content: "";
+            position: absolute;
+            inset: 0 auto 0 0;
+            width: 6px;
+            background: var(--accent);
+        }
+
+        .lip-close-eyebrow {
+            display: inline-block;
+            margin-bottom: 0.75rem;
+            padding: 0.42rem 0.75rem;
+            border-radius: 999px;
+            background: var(--accent-soft);
+            color: var(--link);
+            border: 1px solid var(--accent-border);
+            font-size: 0.76rem;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .lip-close-hero h3 {
+            margin: 0 0 0.65rem;
+            font-size: clamp(1.7rem, 3vw, 2.4rem);
+            line-height: 1.1;
+        }
+
+        .lip-close-hero p {
+            margin: 0;
+            max-width: 780px;
+            color: var(--muted);
+            line-height: 1.7;
+            font-size: 0.98rem;
+        }
+
+        .lip-close-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .lip-close-card {
+            position: relative;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            min-height: 116px;
+            padding: 1.2rem;
+            border-radius: var(--radius-md);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .lip-close-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-border);
+            box-shadow: var(--shadow-md);
+        }
+
+        .lip-close-number {
+            flex: 0 0 auto;
+            width: 42px;
+            height: 42px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 14px;
+            background: var(--accent-soft);
+            color: var(--link);
+            border: 1px solid var(--accent-border);
+            font-weight: 900;
+            font-size: 0.88rem;
+        }
+
+        .lip-close-card h4 {
+            margin: 0 0 0.35rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 900;
+            color: var(--heading);
+        }
+
+        .lip-close-card p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.55;
+            font-size: 0.92rem;
+        }
+
+        .lip-close-card.is-success {
+            border-color: var(--accent-border);
+            background: linear-gradient(145deg, var(--surface) 0%, var(--accent-soft) 100%);
+        }
+
+        .lip-close-card.is-success .lip-close-number {
+            background: var(--accent);
+            color: #ffffff;
+            border-color: var(--accent);
+        }
+
+        .lip-close-rescission {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+            gap: 1rem;
+            align-items: stretch;
+            padding: 1.35rem;
+            border-radius: var(--radius-lg);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .lip-close-rescission h4 {
+            margin: 0 0 0.45rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 900;
+        }
+
+        .lip-close-rescission p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.6;
+            font-size: 0.92rem;
+        }
+
+        .lip-close-days {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 0.6rem;
+        }
+
+        .lip-close-day {
+            padding: 0.85rem;
+            border-radius: var(--radius-sm);
+            background: var(--surface-muted);
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .lip-close-day strong {
+            display: block;
+            color: var(--heading);
+            font-size: 0.86rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .lip-close-day span {
+            display: block;
+            color: var(--muted);
+            font-size: 0.78rem;
+            line-height: 1.35;
+        }
+
+        .lip-close-note {
+            display: flex;
+            gap: 1rem;
+            padding: 1.15rem 1.25rem;
+            border-radius: var(--radius-md);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .lip-close-note-line {
+            width: 5px;
+            border-radius: 999px;
+            background: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .lip-close-note strong {
+            display: block;
+            margin-bottom: 0.25rem;
+            color: var(--heading);
+            font-size: 0.95rem;
+        }
+
+        .lip-close-note p {
+            margin: 0;
+            color: var(--muted);
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 900px) {
+            .lip-close-grid,
+            .lip-close-rescission {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .lip-close-hero {
+                padding: 1.35rem;
+            }
+
+            .lip-close-card {
+                padding: 1rem;
+            }
+
+            .lip-close-days {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+
     </style>
 </head>
 
@@ -2608,8 +2835,116 @@
                 title: "Closing",
                 video: "",
                 hideVideo: true,
-                desc: "Guidelines for closing a loan successfully.",
-                assets: "<ul class='asset-list'><li>📌 Under construction: Closing coming soon.</li></ul>"
+                desc: "A simple breakdown of what happens once a loan is cleared to close.",
+                mainContent: `
+                    <section class="lip-close-section" aria-label="Loans In Process Closing">
+                        <div class="lip-close-hero">
+                            <span class="lip-close-eyebrow">Loans In Process</span>
+                            <h3>Closing</h3>
+                            <p>Once a loan is cleared to close, the focus shifts to scheduling, balancing final numbers, signing documents, and preparing for funding.</p>
+                        </div>
+
+                        <div class="lip-close-grid">
+                            <article class="lip-close-card is-success">
+                                <span class="lip-close-number">01</span>
+                                <div>
+                                    <h4>Loan is Cleared to Close</h4>
+                                    <p>Confirm when the file can be scheduled for closing.</p>
+                                </div>
+                            </article>
+
+                            <article class="lip-close-card">
+                                <span class="lip-close-number">02</span>
+                                <div>
+                                    <h4>Schedule the Borrower</h4>
+                                    <p>Congratulate the borrower and set the closing date and time.</p>
+                                </div>
+                            </article>
+
+                            <article class="lip-close-card">
+                                <span class="lip-close-number">03</span>
+                                <div>
+                                    <h4>Coordinate Internally</h4>
+                                    <p>Communicate with the Closing Coordinator so the file stays on track.</p>
+                                </div>
+                            </article>
+
+                            <article class="lip-close-card">
+                                <span class="lip-close-number">04</span>
+                                <div>
+                                    <h4>Balance with Title</h4>
+                                    <p>The Closing Coordinator works with title to balance the loan.</p>
+                                </div>
+                            </article>
+
+                            <article class="lip-close-card">
+                                <span class="lip-close-number">05</span>
+                                <div>
+                                    <h4>Approve Final Numbers</h4>
+                                    <p>Review and approve the final figures when requested.</p>
+                                </div>
+                            </article>
+
+                            <article class="lip-close-card">
+                                <span class="lip-close-number">06</span>
+                                <div>
+                                    <h4>Docs Sent to Notary</h4>
+                                    <p>Title sends closing documents to the notary for signing.</p>
+                                </div>
+                            </article>
+
+                            <article class="lip-close-card">
+                                <span class="lip-close-number">07</span>
+                                <div>
+                                    <h4>Borrower Signs</h4>
+                                    <p>The notary prints the documents and meets the borrower at the scheduled time.</p>
+                                </div>
+                            </article>
+
+                            <article class="lip-close-card is-success">
+                                <span class="lip-close-number">08</span>
+                                <div>
+                                    <h4>Funding Starts After Rescission</h4>
+                                    <p>Once signing is complete, the Right of Rescission period begins when applicable.</p>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="lip-close-rescission">
+                            <div>
+                                <h4>Right of Rescission Period</h4>
+                                <p>For applicable refinance loans, the rescission timeline starts with the signing date, then counts three business days. Funds are disbursed after the third business day has passed.</p>
+                            </div>
+                            <div class="lip-close-days" aria-label="Right of Rescission timeline">
+                                <div class="lip-close-day">
+                                    <strong>Signing Date</strong>
+                                    <span>Documents are signed</span>
+                                </div>
+                                <div class="lip-close-day">
+                                    <strong>Business Day 1</strong>
+                                    <span>First rescission day</span>
+                                </div>
+                                <div class="lip-close-day">
+                                    <strong>Business Day 2</strong>
+                                    <span>Second rescission day</span>
+                                </div>
+                                <div class="lip-close-day">
+                                    <strong>Business Day 3</strong>
+                                    <span>Funds after this period</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="lip-close-note">
+                            <span class="lip-close-note-line" aria-hidden="true"></span>
+                            <div>
+                                <strong>Quick reminder</strong>
+                                <p>After CTC, stay close to the Closing Coordinator, approve final numbers quickly, and make sure the borrower understands signing and funding timing.</p>
+                            </div>
+                        </div>
+                    </section>
+                `,
+                assets: ""
             },
             uwm_videos: {
                 title: "UWM Specific Videos",
