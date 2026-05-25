@@ -1683,17 +1683,175 @@
         }
 
 
-
-        /* Search bar size reduction: half of current width */
+        /* Search bar size reduction: two-thirds width */
         @media (min-width: 1224px) {
             .search-container {
-                width: 140px !important;
-                max-width: 140px !important;
+                width: 280px !important;
+                max-width: 280px !important;
+            }
+        }
+
+
+        /* Loans In Process - What to Expect */
+        .lip-status-wrap {
+            display: grid;
+            gap: 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        .lip-status-hero {
+            background: linear-gradient(145deg, var(--surface) 0%, var(--surface-muted) 100%);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: clamp(1.5rem, 3vw, 2.25rem);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .lip-kicker {
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            margin-bottom: 0.85rem;
+            padding: 0.42rem 0.72rem;
+            border-radius: 999px;
+            background: var(--accent-soft);
+            color: var(--link);
+            border: 1px solid var(--accent-border);
+            font-size: 0.76rem;
+            font-weight: 900;
+            letter-spacing: 0.055em;
+            text-transform: uppercase;
+        }
+
+        .lip-status-hero h3 {
+            margin: 0 0 0.6rem;
+            font-size: clamp(1.45rem, 2.7vw, 2.2rem);
+            line-height: 1.12;
+        }
+
+        .lip-status-hero p {
+            max-width: 780px;
+            margin: 0;
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .lip-status-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .lip-status-card {
+            position: relative;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 0.95rem;
+            align-items: start;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 1.15rem;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .lip-status-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--accent-border);
+        }
+
+        .lip-status-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.25rem;
+            height: 2.25rem;
+            border-radius: 999px;
+            background: var(--accent-soft);
+            color: var(--link);
+            border: 1px solid var(--accent-border);
+            font-size: 0.82rem;
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+
+        .lip-status-copy h4 {
+            margin: 0 0 0.35rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 900;
+            color: var(--heading);
+        }
+
+        .lip-status-copy p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.55;
+        }
+
+        .lip-status-card.is-attention {
+            border-left: 4px solid #f59e0b;
+        }
+
+        .lip-status-card.is-success {
+            border-left: 4px solid #16a34a;
+        }
+
+        .lip-status-card.is-final {
+            border-left: 4px solid var(--accent);
+        }
+
+        .lip-status-note {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.85rem;
+            padding: 1.15rem 1.25rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .lip-status-note-bar {
+            width: 4px;
+            align-self: stretch;
+            border-radius: 999px;
+            background: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .lip-status-note strong {
+            display: block;
+            margin-bottom: 0.25rem;
+            color: var(--heading);
+            font-size: 0.95rem;
+        }
+
+        .lip-status-note p {
+            margin: 0;
+            color: var(--muted);
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 900px) {
+            .lip-status-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .lip-status-card {
+                grid-template-columns: 1fr;
             }
 
-            .search-container input {
-                font-size: 0.82rem !important;
-                padding-right: 0.75rem !important;
+            .lip-status-number {
+                width: 2rem;
+                height: 2rem;
             }
         }
 
@@ -2023,8 +2181,106 @@
                 title: "What to Expect",
                 video: "",
                 hideVideo: true,
-                desc: "Frameworks for what to expect during the loan process.",
-                assets: "<ul class='asset-list'><li>📌 Under construction: What to Expect coming soon.</li></ul>"
+                desc: "A simple breakdown of each loan status and what it means while a refinance is in process.",
+                assets: `
+                    <section class="lip-status-wrap" aria-label="Loans In Process What to Expect">
+                        <div class="lip-status-hero">
+                            <span class="lip-kicker">Loans In Process</span>
+                            <h3>What Each Status Means</h3>
+                            <p>Use this as a quick guide to understand where a file is in the process, what is happening behind the scenes, and what may need attention next.</p>
+                        </div>
+
+                        <div class="lip-status-grid">
+                            <article class="lip-status-card">
+                                <span class="lip-status-number">01</span>
+                                <div class="lip-status-copy">
+                                    <h4>Ready for Submission</h4>
+                                    <p>The file is packaged and ready to be sent for review.</p>
+                                </div>
+                            </article>
+
+                            <article class="lip-status-card">
+                                <span class="lip-status-number">02</span>
+                                <div class="lip-status-copy">
+                                    <h4>Processor Round Robin</h4>
+                                    <p>The file is being assigned to the next available processor.</p>
+                                </div>
+                            </article>
+
+                            <article class="lip-status-card">
+                                <span class="lip-status-number">03</span>
+                                <div class="lip-status-copy">
+                                    <h4>Processor Introduction</h4>
+                                    <p>The assigned processor introduces themselves and helps guide the file forward.</p>
+                                </div>
+                            </article>
+
+                            <article class="lip-status-card">
+                                <span class="lip-status-number">04</span>
+                                <div class="lip-status-copy">
+                                    <h4>Underwriting Status</h4>
+                                    <p>The loan is being reviewed to confirm it meets program guidelines.</p>
+                                </div>
+                            </article>
+
+                            <article class="lip-status-card is-attention">
+                                <span class="lip-status-number">05</span>
+                                <div class="lip-status-copy">
+                                    <h4>Rejected Status</h4>
+                                    <p>The file cannot move forward as submitted and needs correction or review.</p>
+                                </div>
+                            </article>
+
+                            <article class="lip-status-card">
+                                <span class="lip-status-number">06</span>
+                                <div class="lip-status-copy">
+                                    <h4>Approved with Conditions Status</h4>
+                                    <p>The loan looks good, but final items still need to be cleared.</p>
+                                </div>
+                            </article>
+
+                            <article class="lip-status-card is-success">
+                                <span class="lip-status-number">07</span>
+                                <div class="lip-status-copy">
+                                    <h4>Cleared to Close</h4>
+                                    <p>All required items are approved and closing documents can be prepared.</p>
+                                </div>
+                            </article>
+
+                            <article class="lip-status-card">
+                                <span class="lip-status-number">08</span>
+                                <div class="lip-status-copy">
+                                    <h4>Closing</h4>
+                                    <p>Final documents are being prepared, scheduled, or signed.</p>
+                                </div>
+                            </article>
+
+                            <article class="lip-status-card is-attention">
+                                <span class="lip-status-number">09</span>
+                                <div class="lip-status-copy">
+                                    <h4>Post Close Problem</h4>
+                                    <p>A final issue after signing needs to be fixed before the file is complete.</p>
+                                </div>
+                            </article>
+
+                            <article class="lip-status-card is-final">
+                                <span class="lip-status-number">10</span>
+                                <div class="lip-status-copy">
+                                    <h4>Funded</h4>
+                                    <p>The loan has funded and the refinance process is complete.</p>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="lip-status-note">
+                            <span class="lip-status-note-bar" aria-hidden="true"></span>
+                            <div>
+                                <strong>Quick reminder</strong>
+                                <p>Files move fastest when requested items are sent in quickly and title, payoff, appraisal, and final conditions are cleared without delays.</p>
+                            </div>
+                        </div>
+                    </section>
+                `
             },
             lip_communication: {
                 title: "Communication",
